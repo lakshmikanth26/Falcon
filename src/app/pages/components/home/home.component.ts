@@ -11,7 +11,7 @@ interface Food {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  timeTaken: number = 0;
   constructor() { }
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},

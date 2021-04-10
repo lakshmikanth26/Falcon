@@ -11,6 +11,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './pages/components/home/home.component';
 import { FindingFalconComponent } from './pages/components/finding-falcon/finding-falcon.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatButtonModule,
     MatCardModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
