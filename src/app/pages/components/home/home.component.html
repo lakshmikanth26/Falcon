@@ -1,87 +1,28 @@
-<div class="content">
+<div class="content" #content>
     <h4>Select Planets you want to search in :</h4>
-    <mat-grid-list cols="4" rowHeight="150px">
-
-        <mat-grid-tile>
-            <mat-card class="card">
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <label class="text"> Planet one </label>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Select planet</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="let food of foods" [value]="food.value">
-                                    {{food.viewValue}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-            <mat-card class="card">
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <label class="text"> Planet Two </label>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Select planet</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="let food of foods" [value]="food.value">
-                                    {{food.viewValue}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-            <mat-card class="card">
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <label class="text"> Planet Three </label>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Select planet</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="let food of foods" [value]="food.value">
-                                    {{food.viewValue}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-            <mat-card class="card">
-                <mat-list role="list">
-                    <mat-list-item role="listitem">
-                        <label class="text"> Planet Four </label>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Select planet</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="let food of foods" [value]="food.value">
-                                    {{food.viewValue}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card>
-        </mat-grid-tile>
-
-    </mat-grid-list>
+    <form [formGroup]="planetForm">
+        <mat-grid-list cols={{col}} rowHeight="150px">
+            <mat-grid-tile *ngFor="let name of totalPlanets;index as i;">
+                <mat-card class="card">
+                    <mat-list role="list">
+                        <mat-list-item role="listitem">
+                            <label class="text"> {{name}} </label>
+                        </mat-list-item>
+                        <mat-list-item role="listitem">
+                            <mat-form-field class="select" appearance="fill">
+                                <mat-label>Select planet</mat-label>
+                                <mat-select formcontrolname="planetOne" (selectionChange)="onChange($event,name)">
+                                    <mat-option *ngFor="let planet of planets" [value]="planet"
+                                        [disabled]="planet.disabled">
+                                        {{planet.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
     <h2 class="time">Time taken:{{timeTaken}}</h2>
 </div>

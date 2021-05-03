@@ -9,7 +9,7 @@
   h4,
   h5,
   h6 {
-    margin-left: 37%;
+    margin-left: 40%;
     padding-top: 10px;
   }
 }
@@ -37,7 +37,7 @@
   border: 1px solid rgb(168, 167, 167);
   background-color: #f0f0f0;
   height: 80px;
-  width: 200px;
+  width: 50%;
   margin: 0 8px 16px;
   padding: 16px;
   display: flex;
@@ -50,10 +50,16 @@
 
 .text {
   font-size: large;
-  margin-left: 50px;
+  margin-left: 65px;
   margin-bottom: 30px;
 }
 
 .time {
   margin-left: 45%;
+}
+
+.select {
+    margin-left: 61px;
+    width: 54%;
+    background-color: transparent;
 }

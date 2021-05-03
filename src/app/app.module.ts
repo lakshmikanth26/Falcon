@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
@@ -12,25 +13,32 @@ import { HomeComponent } from './pages/components/home/home.component';
 import { FindingFalconComponent } from './pages/components/finding-falcon/finding-falcon.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './layouts/dialog/dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FindingFalconComponent
+    FindingFalconComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
     MatSelectModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ HomeComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
