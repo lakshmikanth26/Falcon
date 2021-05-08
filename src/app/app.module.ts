@@ -10,19 +10,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './pages/components/home/home.component';
-import { FindingFalconComponent } from './pages/components/finding-falcon/finding-falcon.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './layouts/dialog/dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FindingFalconComponent,
     DialogComponent
   ],
   imports: [
@@ -36,7 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatGridListModule,
     MatListModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule
   ],
   providers: [ HomeComponent ],
   bootstrap: [AppComponent]

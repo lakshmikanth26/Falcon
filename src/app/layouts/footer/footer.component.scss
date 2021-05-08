@@ -1,6 +1,5 @@
 .toolbar {
   position: absolute;
-  top: 91%;
   left: 0;
   right: 0;
   height: 60px;
@@ -24,4 +23,20 @@
       font-size: small;
       margin-left: 10%;
   }
+
+}
+
+
+@media screen and (min-width: 1200px) {
+  .toolbar {
+    top: 91%;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  p {
+      font-size: small;
+      margin-left: 10%;
+  }
+
 }

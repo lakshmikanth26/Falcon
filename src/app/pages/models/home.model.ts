@@ -18,28 +18,29 @@ export class SelectedPlanets {
 }
 export class SearchUnit {
     selectedPlanet: Planets ;
-   // selectedVehicle: Vehicle ;
     constructor(search: any) {
         this.selectedPlanet = search.selectedPlanet;
-        //this.selectedVehicle = search.selectedVehicle;
     }
 }
 
-export class Vehicle {
+
+export class Vehicles {
     name: string;
     total_no: number;
     max_distance: number;
     speed: number;
+    id: number;
     constructor(vehicle: any) {
         this.name = vehicle.name;
         this.total_no = vehicle.total_no;
         this.max_distance = vehicle.max_distance;
         this.speed = vehicle.number;
+        this.id = vehicle.id;
     }
 }
 
 export class VehicleDisplay {
-    vehicle: Vehicle;
+    vehicle: Vehicles;
     available: number;
     disabled: boolean;
     constructor(response: any) {
@@ -47,4 +48,14 @@ export class VehicleDisplay {
         this.available = response.available;
         this.disabled = response.disabled;
     }
+}
+
+export class FindFalcon {
+    token!: string;
+    planet_names!: string[];
+    vehicle_names!: string[];
+}
+export class SuccessFind {
+    planet_name!: string;
+    status!: string;
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/shared/services/http-service/http.service';
 import { environment } from 'src/environments/environment';
 
@@ -16,5 +17,29 @@ export class CommonService {
   getPlanets() {
     return this.httpService.get(baseUrl + 'planets');
   }
-  
+
+  getVehicles() {
+    return this.httpService.get(baseUrl + 'vehicles');
+  }
+
+  getToken(postData: any): Observable<any> {
+    return this.httpService.postWithoutPipe(baseUrl + 'token',postData);
+  }
+
+  findFalcon(postData: any): Observable<any> {
+    return this.httpService.post(baseUrl + 'find',postData);
+  }
+
+  // async getToken() {
+  //   return await this.storageService.get(AppConstants.AUTHTOKEN).then((authToken) => {
+  //     let httpHeaders = new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'Authorization': `Bearer ${authToken}`
+  //     });
+  //     return {
+  //       headers: httpHeaders
+  //     };
+  //   });
+  // }
+
 }

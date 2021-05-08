@@ -35,25 +35,28 @@ export class HttpService  {
   //   );
   // }
 
-  // post (url: string,body: any) {
-  //   const rqstbody = body;
-  //   let httpHeaders = new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //   });
-  //   const options = {headers: httpHeaders}
-  //   return this.http.post(url,rqstbody,options).pipe(
-  //     map(data=> data),
-  //     catchError(err => of(err.error))
-  //   );
-  // }
-  // postWithoutPipe (url: string,body: any) {
-  //   const rqstbody = body;
-  //   let httpHeaders = new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //   });
-  //   const options = {headers: httpHeaders}
-  //   return this.http.post(url,rqstbody,options);
-  // }
+  post (url: string,body: any) {
+    const rqstbody = body;
+    let httpHeaders = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    });
+    const options = {headers: httpHeaders}
+    return this.http.post(url,rqstbody,options).pipe(
+      map(data=> data),
+      catchError(err => of(err.error))
+    );
+  }
+
+  postWithoutPipe (url: string,body: any) {
+    const rqstbody = body;
+    let httpHeaders = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    });
+    const options = {headers: httpHeaders}
+    return this.http.post(url,rqstbody,options);
+  }
 
   // put (url: string,body: any){
   //   const rqstbody = body;
