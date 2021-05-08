@@ -6,18 +6,6 @@ import { Planets, SearchUnit } from '../../models/home.model';
 })
 export class HomeService {
 
-  private selectedUnits: SearchUnit[] = [];
-  private selectedPlanet: Planets[] =[];
   constructor() { }
-
-  getSelectedUnits(): SearchUnit[] {
-    return this.selectedUnits;
-  }
-
-  getPlanetUnits(planets: any): Planets[] {
-    this.selectedPlanet = planets;
-    return this.selectedPlanet;
-  }
-
   
 }

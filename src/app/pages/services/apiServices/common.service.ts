@@ -30,16 +30,4 @@ export class CommonService {
     return this.httpService.post(baseUrl + 'find',postData);
   }
 
-  // async getToken() {
-  //   return await this.storageService.get(AppConstants.AUTHTOKEN).then((authToken) => {
-  //     let httpHeaders = new HttpHeaders({
-  //       'Content-Type': 'application/json',
-  //       'Authorization': `Bearer ${authToken}`
-  //     });
-  //     return {
-  //       headers: httpHeaders
-  //     };
-  //   });
-  // }
-
 }

@@ -3,7 +3,6 @@ import { ErrorService } from 'src/app/shared/services/error/error.service';
 import { FindFalcon, Planets, SelectedPlanets, SuccessFind, Vehicles } from '../../models/home.model';
 import { CommonService } from '../../services/apiServices/common.service';
 import { AppConstants } from 'src/app/app.constants';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,9 +10,9 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
+  
   success: boolean = true;
   findFalcone: boolean = true;
-  token!: string;
   totalPlanets: string[];
   planets: Planets[] = [];
   col: number;
@@ -32,9 +31,9 @@ export class HomeComponent implements OnInit {
   finalSelectedVehicles: string[] = [];
   falcon: FindFalcon;
   successFind: SuccessFind;
+
   constructor(private commonService: CommonService,
-    private errorService: ErrorService,
-    private router: Router) {
+    private errorService: ErrorService) {
     this.selectedPlanets = new SelectedPlanets();
     this.falcon = new FindFalcon();
     this.successFind = new SuccessFind();
@@ -154,7 +153,6 @@ export class HomeComponent implements OnInit {
   findingFalcone() {
     let postData = null;
     this.commonService.getToken(postData).subscribe((response: any) => {
-      this.token = response.token;
       this.falcon.token = response.token;
       this.commonService.findFalcon(this.falcon).subscribe((response: any) => {
         this.success = false;

@@ -19,22 +19,6 @@ export class HttpService  {
     return this.http.get(url, options);
   }
 
-  // getAuthorization(url: string,options: any) {  
-  //   return this.http.get(url, options);
-  // }
-
-  // postWithFormData (url: string,body: any) {
-  //   const rqstbody = body;
-  //   let httpHeaders = new HttpHeaders({
-  //       'Content-Type': 'multipart/form-data; charset=UTF-8'
-  //   });
-  //   const options = {headers: httpHeaders}
-  //   return this.http.post(url,rqstbody,options).pipe(
-  //     map(data=> data),
-  //     catchError(err => of(err.error))
-  //   );
-  // }
-
   post (url: string,body: any) {
     const rqstbody = body;
     let httpHeaders = new HttpHeaders({
@@ -57,24 +41,5 @@ export class HttpService  {
     const options = {headers: httpHeaders}
     return this.http.post(url,rqstbody,options);
   }
-
-  // put (url: string,body: any){
-  //   const rqstbody = body;
-  //   let httpHeaders = new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //   });
-  //   const options = {headers: httpHeaders}
-  //   return this.http.put(url,rqstbody,options).pipe(
-  //       map(data=> data),
-  //       catchError(err => of(err.error))
-  //  );
-  // }
-
-  // delete (url: string,id: number){
-  //     const rqstURL = url + '/' + id;
-  //   return this.http.delete(rqstURL).pipe(
-  //       map(data=> data),
-  //       catchError(err => of(err.error))
-  //  );;
-  // }
+  
 }
